@@ -1,0 +1,52 @@
+.terminal-wrapper {
+  position: fixed;
+  width: 50%;
+  height: 40%;
+  background: rgba(0, 0, 0, 0.9);
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+  border-radius: 5px;
+  z-index: 1000;
+  cursor: move;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+
+.terminal-header:active {
+  cursor: grabbing;
+}
+
+.terminal-body {
+  height: calc(100% - 30px); /* Adjust for header height */
+  overflow-y: auto;
+  padding: 10px;
+  border-top: 2px solid #333;
+}
+
+.xterm {
+  height: 100%;
+  width: 100%;
+  color: #00ff00 !important;
+  background-color: black !important;
+  padding: 10px;
+}
+
+:host ::ng-deep .xterm-char-measure-element {
+  display: none;
+}
+
+:host ::ng-deep .xterm-helper-textarea {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}

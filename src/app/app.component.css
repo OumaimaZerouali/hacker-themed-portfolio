@@ -1,0 +1,91 @@
+/* INTRO */
+.intro-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 40px;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.intro-text {
+  flex: 1;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.intro-image {
+  margin-left: 30px;
+}
+
+.intro-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+/* SOCIALS */
+.socials {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+
+  top: 70%;
+  left: 27%;
+
+  gap: 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #00ff00;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+}
+
+.socials a:focus {
+  outline: 2px solid #00ff00;
+}
+
+/* TERMINAL */
+.terminal-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #00ff00;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.terminal-icon:hover {
+  transform: scale(1.2);
+  color: #00ffaa;
+}
+
