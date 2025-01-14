@@ -10,15 +10,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/hacker-themed-portfolio/",
             "outputPath": "dist/personalpage",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets",
@@ -26,12 +23,27 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/xterm",
+                "output": "assets/xterm"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/xterm-addon-fit/lib",
+                "output": "assets/xterm"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/xterm/css/xterm.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/xterm/lib/xterm.js",
+              "node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"
+            ],
+            "baseHref": "/hacker-themed-portfolio/"
           },
           "configurations": {
             "production": {
@@ -47,7 +59,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "sourceMap": true
             },
             "development": {
               "optimization": false,
@@ -69,29 +82,6 @@
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
         }
@@ -99,3 +89,4 @@
     }
   }
 }
+

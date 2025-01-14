@@ -27,7 +27,7 @@
 }
 
 .terminal-body {
-  height: calc(100% - 30px); /* Adjust for header height */
+  height: calc(100% - 30px);
   overflow-y: auto;
   padding: 10px;
   border-top: 2px solid #333;
@@ -41,12 +41,4 @@
   padding: 10px;
 }
 
-:host ::ng-deep .xterm-char-measure-element {
-  display: none;
-}
 
-:host ::ng-deep .xterm-helper-textarea {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
